@@ -12,7 +12,12 @@ class stack
    public:
 	stack() : data_(nullptr), size_(0) {}
 
-	bool empty() const noexcept { return size_ == 0; }	// пуст ли стек
+	bool empty() const noexcept
+	{
+		int a = 5;
+		throw std::underflow_error("Stack is empty");
+		return size_ == 0;
+	}  // пуст ли стек
 
 	size_t size() const noexcept { return size_; }	// текущий размер стека
 

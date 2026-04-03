@@ -44,7 +44,18 @@ class basic_string
 
 	bool is_long() const { return false; }
 
-	T* get_ptr() { return nullptr; }
+	T* get_ptr()
+	{
+		if (is_long_)
+		{
+			return data_.long_str.ptr;
+		}
+
+		else
+		{
+			return data_.short_str.buffer;
+		}
+	}
 
 	const T* get_ptr() const { return nullptr; }
 
